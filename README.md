@@ -1,41 +1,34 @@
-# 🛠️ Coder Buddy
+# 🛠️ Loveable Clone
 
-**Coder Buddy** is an AI-powered coding assistant built with [LangGraph](https://github.com/langchain-ai/langgraph).  
+**Loveable Clone** is an AI-powered coding assistant built with [LangGraph](https://github.com/langchain-ai/langgraph).  
 It works like a multi-agent development team that can take a natural language request and transform it into a complete, working project — file by file — using real developer workflows.
 
 ---
 
 ## 🏗️ Architecture
 
-- **Planner Agent** – Analyzes your request and generates a detailed project plan.
-- **Architect Agent** – Breaks down the plan into specific engineering tasks with explicit context for each file.
-- **Coder Agent** – Implements each task, writes directly into files, and uses available tools like a real developer.
+Each node in the system plays a specialized role:
+
+🧠 Planner Node – Understands the user’s prompt and determines the required features, components, and files.
+
+🏗️ Architect Node – Designs the structure of each file and generates corresponding unit tests.
+
+💻 Coder Node – Implements the actual code for every file, following the architecture and tests.
+
+🧪 QA Node – Executes tests using pytest, validates the generated code, and provides feedback for iterative fixes.
 
 <div style="text-align: center;">
     <img src="resources/coder_buddy_diagram.png" alt="Coder Agent Architecture" width="90%"/>
 </div>
 
----
+💡 Streamlit UI
 
-## 🚀 Getting Started
-### Prerequisites
-- Make sure you have uv installed, follow the instructions [here](https://docs.astral.sh/uv/getting-started/installation/) to install it.
-- Ensure that you have created a groq account and have your API key ready. Create an API key [here](https://console.groq.com/keys).
+A Streamlit-based interface allows users to:
 
-### ⚙️ **Instsllstion and Startup**
-- Create a virtual environment using: `uv venv` and activate it using `source .venv/bin/activate`
-- Install the dependencies using: `uv pip install -r pyproject.toml`
-- Create a `.env` file and add the variables and their respective values mentioned in the `.sample_env` file
+Enter a project prompt
 
-Now that we are done with all the set-up & installation steps we can start the application using the following command:
-  ```bash
-    python main.py
-  ```
+Instantly visualize the generated files and code
 
-### 🧪 Example Prompts
-- Create a to-do list application using html, css, and javascript.
-- Create a simple calculator web application.
-- Create a simple blog API in FastAPI with a SQLite database.
+Review testing outcomes from the QA Node
 
----
-Copyright©️ Codebasics Inc. All rights reserved.
+![1760283127123](https://github.com/user-attachments/assets/20b26957-9901-40dd-b5db-ece2ce5449b0)
